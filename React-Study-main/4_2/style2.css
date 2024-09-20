@@ -1,0 +1,108 @@
+/* css내에서 다른css파일 가져올수 있음 */
+@import url("./style.css"); /*url함수*/
+
+#id {
+    /* ...속성들 */
+    background-color: aqua;
+}
+
+.class{
+    /* ...속성들 */
+    background-color: antiquewhite;
+}
+
+/* 일치 선택자 */
+/* span 태그 이면서 orange인거 */
+span.orange{
+    color: orange;
+}
+
+/* 자식 선택자 (>) */
+/* ul의 자식 요소 인 class "green" 속성과 값을 */
+ul > .green{
+    color: green;
+}
+
+/* 하위 선택자 */
+ul .red{
+    color: red;
+}
+
+/* 인접 형태 선택자 */
+/* 선택된거(yellow)에서 가장 가까운거(포도) */
+.yellow + li{
+    color: yellowgreen;
+}
+
+/* 일반 형제 선택자 */
+/* 선택된거(yellow) 아래에 있는거(딸기, 포도) */
+.yellow ~ li{
+    color: yellow;
+}
+
+/* 가상 선택자 */
+/* 마우스 올렸을때(hover) */
+.purple:hover{
+    color: purple;
+}
+/* 마우스 누르고 있는 동안(active) */
+.purple:active{
+    color: red;
+}
+/* 활성화됐을때(focus) */
+#in:focus{
+    background-color: aqua;
+}
+
+/* 가상 */
+.car span:first-child{
+    color: orange;
+}
+.car h3:last-child{
+    color: gray;
+}
+.car *:nth-child(2){
+    color: red;
+}
+
+/* 부정 */
+.car *:not(span){
+    font-size: x-large;
+}
+
+/* before after */
+.box::before{
+    content: "(❁´◡`❁)";
+}
+.box::after{
+    content: "☆*: .｡. o(≧▽≦)o .｡.:*☆²";
+}
+
+/* ~~에 대한 */
+/* disabled를 가진 것 들다 */
+[disabled]{
+    color: red;
+}
+/* 특정 타입만 하는법 */
+[type="password"]{
+    color: yellowgreen;
+}
+[value="HI"]{
+    color: rgb(34, 124, 25);
+}
+
+/* 상속 */
+.animal {
+    color: red;
+}
+/* 상속을 받는 대표적인 요소들 */
+/* font관련, line-weight, color, text-align */
+
+/* 우선순위 */
+/*div{color: red !important;}*/   /* important = 중요도 99999999999999 */
+                                  /* div 안에 style쓴거 = 중요도 1000 */
+/*#color_yellow{color: yellow;}*/ /* id = 중요도 100 */
+/*.color_green{color: green;}*/   /* class = 중요도 10 */
+/*div{color: blue;}*/             /* 태그 선택자 = 중요도 1 */
+/**{color: brown;}*/              /* 전체 선택자 = 중요도 0 */
+/*body{color: violet;}*/          /* body는 상속을 하지않음 */
