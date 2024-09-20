@@ -32,7 +32,7 @@ export default function Home() {
                 sx={{'&:last-child td, &:last-child th': {border:0}}}
               >
                 <TableCell component="th" scope="row">{row.name}</TableCell>
-                <TableCell><link href={row.github}>깃허브 바로가기</link></TableCell>
+                <TableCell><Link href={row.github}>깃허브 바로가기</Link></TableCell>
                 <TableCell><Button variant = "outlined" size="small" href={row.link}>Link</Button></TableCell>
               </TableRow>
               ))}
