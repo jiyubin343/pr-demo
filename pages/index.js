@@ -1,7 +1,7 @@
 
 import {Container, Table, TableBody, TableCell, TableHead, TableRow} from "@mui/material";
 import Link from "next/link";
-import Button from "@mui/material";
+import Button from "@mui/material/Button";
 
 function createData(name,github,link){
   return {name,github,link};
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Container fixed>
-        <h1></h1>
+        <h1>g</h1>
         <Table sx = {{minWid : 650}} aria-label = "demo-list">
             <TableHead>
               <TableRow>
